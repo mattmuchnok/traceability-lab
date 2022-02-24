@@ -40,6 +40,7 @@ app.post('/api/student', (req, res)=>{
         res.status(400).send('must provide a name.')
     } else {
         rollbar.critical('student already exists')
+        rollbar.critical('OH NO THE STUDENT IS ALREADY IN THE SYSTEM')
         res.status(400).send('that student already exists')
     }
 
