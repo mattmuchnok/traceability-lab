@@ -3,8 +3,7 @@ const path = require('path')
 const Rollbar = require('rollbar')
 
 // include and initialize the rollbar library with your access token
-var Rollbar = require('rollbar')
-var rollbar = new Rollbar({
+const rollbar = new Rollbar({
   accessToken: '77a3cb2541ab4cac98a16a5642388fb3',
   captureUncaught: true,
   captureUnhandledRejections: true,
@@ -19,10 +18,10 @@ app.use(express.json())
 
 let students = []
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../index.html'))
-    rollbar.info('html file was served successfully')
-})
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname, '../index.html'))
+//     rollbar.info('html file was served successfully')
+// })
 
 app.use(express.static(path.join(__dirname, '../')))
 
